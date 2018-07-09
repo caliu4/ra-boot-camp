@@ -4,7 +4,7 @@
 # Assignment Examples
 # Numeric
 x = 7
-y <- 8
+y <- 8 #use this for assignment instead
 
 
 # Character
@@ -28,6 +28,7 @@ days
 
 
 # Operators
+#capitalizations matter
 
 z <- X + y
 # The preceeding will return an error becuase X <> x
@@ -83,12 +84,14 @@ Z <- c(2, NA, 6, 8, NA, 12)
 is.na(Z)
 
 Z <- c(2, NULL, 6, 8, NA, 12)
+#null tells to skip over & not act as placeholder
 
 # Useful Functions....
 nchar(name)
 length(X)
 mean(X)
 ?"*"
+#apropos = contains something
 apropos('mea')
 
 # Clean Up 
@@ -118,9 +121,10 @@ View(theMatrix)
 theMatrix <- matrix(1:4, nrow=2, byrow=TRUE)
 View(theMatrix)
 
-# Lists
+# Lists--don't have to be same thing
 y <- list("a", 1L, 1.5, TRUE)
 y[3]
+#str--structure
 str(y)
 ?str()
 
@@ -128,7 +132,7 @@ str(y)
 rm(list=ls(all=TRUE))
 cat("\014") 
 
-# Data Frames
+# Data Frames--arrays within an array
 x <- 10:1
 y <- -4:5
 z <- c('Hockey', 'Football', 'Curling', 'Soccer', 'Rugby', 'Baseball', 'Golf', 'Basketball', 'Wrestling', 'Tennis')
@@ -154,19 +158,19 @@ rm(list=ls(all=TRUE))
 cat("\014") 
 #
 ptm <- proc.time()
-Yellow_Tripdata_2017_06 <- read.csv("C:/RTemp/yellow_tripdata_2017-06-ssd-copy.csv", comment.char="#")
+yellow_tripdata_2017_06 <- read.csv("C:/Users/caliu/Dropbox/HBS RA BOOTCAMP/Data Files/Module 07 - Introduction to R/yellow_tripdata_2017-06.csv", comment.char="#")
 proc.time() - ptm
-View(Yellow_Tripdata_2017_06)
+View(yellow_tripdata_2017_06)
 
-head(Yellow_Tripdata_2017_06)
-str(Yellow_Tripdata_2017_06)
-summary(Yellow_Tripdata_2017_06)
+head(yellow_tripdata_2017_06)
+str(yellow_tripdata_2017_06)
+summary(yellow_tripdata_2017_06)
 
 #
 # Throwing out absurdly long trips
-d2<-Yellow_Tripdata_2017_06[which(Yellow_Tripdata_2017_06$trip_distance<1000),]
+d2<-yellow_tripdata_2017_06[which(yellow_tripdata_2017_06$trip_distance<1000),]
 str(d2)
 summary(d2)
 
 # Let's save our data frame for the next module...
-save(Yellow_Tripdata_2017_06,file="Yellow_Tripdata_2017_06.RData")
+save(yellow_tripdata_2017_06,file="yellow_tripdata_2017_06.RData")
